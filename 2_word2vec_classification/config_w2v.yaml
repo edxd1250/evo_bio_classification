@@ -1,0 +1,35 @@
+---
+env:
+  #random seed for run
+  rand_seed : 20240605
+  #path to full pubmed corpus dataset (for help, see generating pubmed corpus github)
+  dataset_path: '/mnt/scratch/ande2472/data/1147_latest.csv'
+  #path to full pubmed corpus cleaned text
+  clean_path: '/mnt/home/ande2472/data/bigdataoutput/complete_1147_clean_combined.pickle'
+  #path to full pubmed corpus (Scibert) embedding matrix
+  emb_path: '/mnt/home/ande2472/data/bigdataoutput/complete_1147_emb_combined.pickle'
+  #path to journal list (for help, see generating pubmed corpus github)
+  journals_dir: '/mnt/home/ande2472/data/full_clean_data/journalswISSN.csv'
+
+  # Folder for storing generated data/model, recommended to pick place with lots of storage (like scratch)
+  output_dir: '/mnt/scratch/ande2472/model_output/evo_bio_class'
+  # Subfolders for storing models and data (generated during run)
+  model_dir_name : 'models'
+  data_dir_name : 'data'
+
+
+
+
+create_corpus:
+  # Run name (optional)
+  run_name: ''
+  # list of pubmed journals issns to be included in positive set
+  issn_list: ['15452069','14712148','20419139','00143820','1525142X','20563744','17524571','15738477','2296701X','14209101','14321432','2041210X','15371719','1365294X','10557903','2397334X','1076836X','18728383','17596653','15375323','10960325']
+  #Use the full positive set in dataset
+  use_full_pos: True
+  #Ratio of positive to negative set for corpus
+  pos_rate: .30
+
+
+
+...
